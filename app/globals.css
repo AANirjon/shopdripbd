@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    color-scheme: light;
+    font-family: "General Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #f6f2ed;
+    color: #111111;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, rgba(237, 230, 222, 0.28), transparent 32%), #f6f2ed;
+    color: #111;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+::selection {
+    background: rgba(43, 31, 24, 0.16);
+    color: #111;
+}
+
+.brand-gradient {
+    background: linear-gradient(120deg, #0d0a08 0%, #8f7b6b 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+[data-theme="dark"] {
+    background: #0d0a08;
+    color: #f6f2ed;
+}
+
+.dark body {
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 32%), #0d0a08;
+}
+
+@font-face {
+    font-family: "General Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("General Sans"), url("https://fonts.googleapis.com/css2?family=General+Sans:wght@400;500;600;700;800&display=swap") format("woff2");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.05;
+}

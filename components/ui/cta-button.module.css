@@ -1,0 +1,31 @@
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    padding: 16px 36px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.primary {
+    background: #111111;
+    color: #ffffff;
+}
+
+.primary:hover {
+    background: #31291d;
+}
+
+.secondary {
+    background: rgba(17, 17, 17, 0.06);
+    color: #111111;
+    border: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+.secondary:hover {
+    background: rgba(17, 17, 17, 0.12);
+}

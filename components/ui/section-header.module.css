@@ -1,0 +1,31 @@
+.header {
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #7b6a5e;
+}
+
+.title {
+    margin: 24px 0 0;
+    font-size: clamp(3rem, 3.6vw, 5rem);
+    line-height: 0.95;
+    font-weight: 600;
+    color: #111111;
+}
+
+.description {
+    margin: 24px 0 0;
+    font-size: 1rem;
+    line-height: 1.85;
+    color: #6d635b;
+    max-width: 38rem;
+}
+
+.sectionHeader {
+    margin: 0 auto;
+}

@@ -1,0 +1,180 @@
+.featuredSection {
+    position: relative;
+    overflow: hidden;
+    background: #f6f2ed;
+    color: #111111;
+}
+
+.sectionContainer {
+    position: relative;
+    padding: 72px 20px 72px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.smallLabel {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #8b8074;
+    font-weight: 500;
+}
+
+.heroTitle {
+    margin: 0;
+    font-family: "Cormorant Garamond", "Bodoni Moda", Georgia, serif;
+    font-size: clamp(2.6rem, 7vw, 3rem);
+    line-height: 0.95;
+    font-weight: 400;
+    color: #111111;
+    max-width: 340px;
+}
+
+.description {
+    margin: 0;
+    max-width: 320px;
+    color: #7a6f67;
+    font-size: 0.95rem;
+    line-height: 1.95;
+}
+
+.ctaLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 38px;
+    border-radius: 0;
+    background: #111111;
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ctaLink:hover {
+    background: #292524;
+}
+
+.editorialGrid {
+    display: grid;
+    gap: 20px;
+    margin-top: 64px;
+    scroll-snap-type: y proximity;
+}
+
+.gridItem {
+    width: 100%;
+    scroll-snap-align: start;
+}
+
+.leftCard {
+    min-height: 520px;
+}
+
+.topCenter {
+    min-height: 320px;
+}
+
+.topRight {
+    min-height: 260px;
+}
+
+.bottomCenter {
+    min-height: 320px;
+}
+
+.bottomRight {
+    min-height: 260px;
+}
+
+.bottomBanner {
+    min-height: 450px;
+}
+
+.gridItem {
+    width: 100%;
+}
+
+.leftCard {
+    min-height: 520px;
+}
+
+.topCenter {
+    min-height: 300px;
+}
+
+.topRight {
+    min-height: 280px;
+}
+
+.bottomCenter {
+    min-height: 280px;
+}
+
+.bottomRight {
+    min-height: 280px;
+}
+
+.bottomBanner {
+    min-height: 320px;
+}
+
+@media (min-width: 1024px) {
+    .sectionContainer {
+        padding: 120px 80px 120px;
+    }
+
+    .editorialGrid {
+        grid-template-columns: 1.5fr 1fr 0.95fr;
+        grid-template-rows: auto auto auto;
+        align-items: stretch;
+    }
+
+    .leftCard {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        min-height: 620px;
+    }
+
+    .topCenter {
+        grid-column: 2;
+        grid-row: 1;
+        min-height: 300px;
+    }
+
+    .topRight {
+        grid-column: 3;
+        grid-row: 1;
+        min-height: 300px;
+    }
+
+    .bottomCenter {
+        grid-column: 2;
+        grid-row: 2;
+        min-height: 320px;
+    }
+
+    .bottomRight {
+        grid-column: 3;
+        grid-row: 2;
+        min-height: 280px;
+    }
+
+    .bottomBanner {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        min-height: 320px;
+    }
+}

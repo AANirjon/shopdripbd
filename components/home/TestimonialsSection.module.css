@@ -1,0 +1,283 @@
+.testimonialsSection {
+    position: relative;
+    overflow: hidden;
+    background: #f6f2ed;
+    color: #111111;
+}
+
+.backgroundLayer {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.92), transparent 28%),
+        radial-gradient(circle at 18% 20%, rgba(239, 233, 225, 0.75), transparent 20%);
+    pointer-events: none;
+}
+
+.blurOrb {
+    position: absolute;
+    inset: auto auto auto -68px;
+    width: 340px;
+    height: 340px;
+    top: 32px;
+    background: rgba(245, 241, 235, 0.85);
+    border-radius: 50%;
+    filter: blur(88px);
+    pointer-events: none;
+}
+
+.sectionContainer {
+    position: relative;
+    padding: 72px 20px 72px;
+    z-index: 1;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    gap: 18px;
+    max-width: 680px;
+}
+
+.smallLabel {
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #86786f;
+    font-weight: 500;
+}
+
+.title {
+    margin: 0;
+    font-family: "Cormorant Garamond", "Bodoni Moda", Georgia, serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    line-height: 1.02;
+    font-weight: 400;
+    color: #111111;
+    max-width: 560px;
+}
+
+.description {
+    margin: 0;
+    max-width: 420px;
+    color: #7d7368;
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+.carouselWrapper {
+    position: relative;
+    margin-top: 64px;
+}
+
+.carouselViewport {
+    overflow: hidden;
+    padding-bottom: 18px;
+}
+
+.carouselContainer {
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+}
+
+.slide {
+    flex: 0 0 80vw;
+    min-width: 80vw;
+    display: flex;
+    justify-content: center;
+}
+
+.slideCard {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    width: 100%;
+    min-height: 280px;
+    padding: 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 20px 50px rgba(15, 15, 15, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    position: relative;
+}
+
+.textPanel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 14px;
+}
+
+.quoteMark {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 4.8rem;
+    line-height: 0.85;
+    color: rgba(17, 17, 17, 0.12);
+}
+
+.quote {
+    margin: 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    line-height: 1.08;
+    color: #111111;
+    max-width: 520px;
+}
+
+.highlight {
+    margin: 0;
+    color: #7d7064;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+}
+
+.metaGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.name {
+    margin: 0;
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.location {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #7d7368;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.imagePanel {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.imageFrame {
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.slideImage {
+    object-fit: cover;
+}
+
+.imageOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(12, 8, 5, 0.18));
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.controlButton {
+    width: 56px;
+    height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(117, 100, 89, 0.22);
+    background: rgba(255, 255, 255, 0.92);
+    color: #111111;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.controlButton:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 20px 50px rgba(15, 15, 15, 0.12);
+    background: rgba(255, 255, 255, 1);
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: rgba(145, 124, 106, 0.28);
+    border: 1px solid rgba(145, 124, 106, 0.28);
+    transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.dotActive {
+    width: 16px;
+    height: 16px;
+    background: #a57f61;
+    border-color: #a57f61;
+    transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .slideCard {
+        grid-template-columns: 1fr 0.95fr;
+        min-height: 400px;
+    }
+
+    .imagePanel {
+        align-items: center;
+    }
+
+    .imageFrame {
+        min-height: 280px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .sectionContainer {
+        padding: 120px 80px 120px;
+    }
+
+    .slide {
+        flex: 0 0 55vw;
+        min-width: 55vw;
+    }
+
+    .slideCard {
+        padding: 22px;
+        min-height: 280px;
+        gap: 20px;
+    }
+
+    .quoteMark {
+        font-size: 4.8rem;
+    }
+
+    .quote {
+        font-size: clamp(2rem, 3vw, 3rem);
+    }
+
+    .highlight {
+        font-size: 0.9rem;
+    }
+
+    .imageFrame {
+        min-height: 260px;
+    }
+}
