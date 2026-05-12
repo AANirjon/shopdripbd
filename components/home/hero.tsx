@@ -43,7 +43,7 @@ export function HeroSection() {
 
             <SectionContainer className="relative min-h-[92vh] flex items-center py-28 lg:py-36">
                 <MotionSection
-                    className="max-w-2xl space-y-8"
+                    className="w-full lg:w-1/2 lg:max-w-[50%] space-y-8"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
@@ -60,7 +60,7 @@ export function HeroSection() {
                     </motion.h1>
                     <motion.p
                         variants={fadeUp}
-                        className="max-w-xl text-base leading-8 text-slate-200 sm:text-lg"
+                        className="w-full text-base leading-8 text-slate-200 sm:text-lg"
                     >
                         Shopdrip offers a quiet wardrobe edit with tactile silhouettes, nuanced neutrals, and editorial details designed for the modern lifestyle.
                     </motion.p>

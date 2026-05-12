@@ -43,6 +43,19 @@ select {
     color: transparent;
 }
 
+/* Make site-wide page containers fully fluid on every screen */
+.fluid {
+    width: 100%;
+}
+
+.fluid [class*="max-w-"] {
+    max-width: 100% !important;
+}
+
+.fluid .container {
+    max-width: 100% !important;
+}
+
 @font-face {
     font-family: "General Sans";
     font-style: normal;
