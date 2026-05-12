@@ -25,7 +25,7 @@ export function ShopMobileFilter() {
         totalCount
     } = useShop();
     const [open, setOpen] = useState(false);
-    const [topOffset, setTopOffset] = useState(0);
+    const [topOffset, setTopOffset] = useState(72);
 
     const clearFilters = () => {
         setActiveFilter("All");
@@ -51,24 +51,29 @@ export function ShopMobileFilter() {
 
     return (
         <div className="lg:hidden">
-            <div className="sticky z-[51] mb-6 bg-white/95 backdrop-blur-xl" style={{ top: topOffset }}>
-                <div className="flex items-center justify-between gap-3 rounded-full border border-neutral-200 bg-white/95 px-4 py-3 shadow-sm">
-                    <button
-                        type="button"
-                        onClick={() => setOpen(true)}
-                        className="inline-flex items-center gap-2 rounded-full bg-[#111111] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#333333]"
-                    >
-                        <Filter className="h-4 w-4" />
-                        Filters
-                    </button>
-                    <div className="flex-1 text-right text-sm text-neutral-600">
-                        Showing {filteredCount} of {totalCount}
+            <div
+                className="fixed inset-x-0 z-[51] bg-white/95 backdrop-blur-xl shadow-sm"
+                style={{ top: topOffset }}
+            >
+                <div className="rounded-b-[28px] border-t border-neutral-200 bg-white p-4 shadow-sm">
+                    <div className="flex items-center justify-between gap-3 rounded-full border border-neutral-200 bg-white/95 px-4 py-3 shadow-sm">
+                        <button
+                            type="button"
+                            onClick={() => setOpen(true)}
+                            className="inline-flex items-center gap-2 rounded-full bg-[#111111] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#333333]"
+                        >
+                            <Filter className="h-4 w-4" />
+                            Filters
+                        </button>
+                        <div className="text-right text-sm text-neutral-600">
+                            Showing {filteredCount} of {totalCount}
+                        </div>
                     </div>
                 </div>
             </div>
 
             {open && (
-                <div className="fixed inset-0 z-50 overflow-y-auto bg-black/40 px-4 py-6">
+                <div className="fixed inset-0 z-[60] overflow-y-auto bg-black/40 px-4 py-6">
                     <div className="mx-auto w-full max-w-lg rounded-[28px] bg-white p-6 shadow-2xl sm:p-8">
                         <div className="mb-6 flex items-center justify-between gap-4">
                             <div>
@@ -86,9 +91,7 @@ export function ShopMobileFilter() {
 
                         <div className="space-y-6">
                             <div>
-                                <div className="mb-3 flex items-center justify-between">
-                                    <p className="text-xs uppercase tracking-[0.35em] text-neutral-500">Sort</p>
-                                </div>
+                                <p className="mb-3 text-[10px] uppercase tracking-[0.35em] text-neutral-500">Sort</p>
                                 <div className="rounded-full border border-neutral-200 bg-[#faf5ef] px-4 py-2">
                                     <select
                                         value={sortOption}
@@ -115,8 +118,8 @@ export function ShopMobileFilter() {
                                                 type="button"
                                                 onClick={() => setActiveFilter(option as any)}
                                                 className={`rounded-full border px-3 py-2 text-[11px] transition ${active
-                                                        ? "bg-[#111111] border-[#111111] text-white"
-                                                        : "bg-white border-neutral-200 text-neutral-700 hover:bg-neutral-50"
+                                                    ? "bg-[#111111] border-[#111111] text-white"
+                                                    : "bg-white border-neutral-200 text-neutral-700 hover:bg-neutral-50"
                                                     }`}
                                             >
                                                 {option}
@@ -137,8 +140,8 @@ export function ShopMobileFilter() {
                                                 type="button"
                                                 onClick={() => setSelectedSize(size)}
                                                 className={`rounded-full border px-3 py-2 text-[11px] transition ${active
-                                                        ? "bg-[#111111] border-[#111111] text-white"
-                                                        : "bg-white border-neutral-200 text-neutral-700 hover:bg-neutral-50"
+                                                    ? "bg-[#111111] border-[#111111] text-white"
+                                                    : "bg-white border-neutral-200 text-neutral-700 hover:bg-neutral-50"
                                                     }`}
                                             >
                                                 {size}
@@ -159,8 +162,8 @@ export function ShopMobileFilter() {
                                                 type="button"
                                                 onClick={() => setSelectedColor(color)}
                                                 className={`rounded-full border px-3 py-2 text-[11px] transition ${active
-                                                        ? "bg-[#111111] border-[#111111] text-white"
-                                                        : "bg-white border-neutral-200 text-neutral-700 hover:bg-neutral-50"
+                                                    ? "bg-[#111111] border-[#111111] text-white"
+                                                    : "bg-white border-neutral-200 text-neutral-700 hover:bg-neutral-50"
                                                     }`}
                                             >
                                                 {color}
@@ -194,23 +197,23 @@ export function ShopMobileFilter() {
                                     />
                                 </div>
                             </div>
-                        </div>
 
-                        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                            <button
-                                type="button"
-                                onClick={clearFilters}
-                                className="rounded-full border border-neutral-200 bg-white px-5 py-3 text-sm font-medium text-neutral-700 transition hover:bg-neutral-50"
-                            >
-                                Clear All
-                            </button>
-                            <button
-                                type="button"
-                                onClick={() => setOpen(false)}
-                                className="rounded-full bg-[#111111] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#333333]"
-                            >
-                                Apply Filters
-                            </button>
+                            <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                                <button
+                                    type="button"
+                                    onClick={clearFilters}
+                                    className="rounded-full border border-neutral-200 bg-white px-5 py-3 text-sm font-medium text-neutral-700 transition hover:bg-neutral-50"
+                                >
+                                    Clear All
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setOpen(false)}
+                                    className="rounded-full bg-[#111111] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#333333]"
+                                >
+                                    Apply Filters
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

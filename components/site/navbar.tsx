@@ -18,6 +18,10 @@ import {
     X
 } from "lucide-react";
 
+interface NavbarProps {
+    transparent?: boolean;
+}
+
 const navItems = [
     { label: "Home", href: "/" },
     { label: "Collections", href: "/shop" },
@@ -25,7 +29,7 @@ const navItems = [
     { label: "Contact", href: "/contact" }
 ];
 
-export function Navbar() {
+export function Navbar({ transparent }: NavbarProps) {
     const pathname = usePathname();
 
     const [isScrolled, setIsScrolled] = useState(false);
@@ -65,7 +69,7 @@ export function Navbar() {
         return pathname.startsWith(href);
     };
 
-    const useDarkNavbar = isScrolled || pathname !== "/";
+    const useDarkNavbar = isScrolled || (!transparent && pathname !== "/");
     const navbarText = useDarkNavbar ? "text-slate-900" : "text-white";
 
     const iconButton = `
@@ -103,27 +107,27 @@ export function Navbar() {
 
                         {/* LEFT NAV */}
                         <div className="justify-self-start">
-                            <nav className="hidden lg:flex items-center gap-7">
+                            <nav className="hidden lg:flex items-center gap-8">
                                 {navItems.map((item) => (
                                     <Link
                                         key={item.href}
                                         href={item.href}
                                         className={`
                                             group relative
-                                            text-[12px]
+                                            text-[13px]
                                             uppercase
-                                            tracking-[0.24em]
-                                            font-normal
+                                            tracking-[0.3em]
+                                            font-semibold
                                             transition-all duration-300
                                             ${navbarText}
                                         `}
                                     >
                                         <span
                                             className={`
-                                                transition-opacity duration-300
+                                                transition-all duration-300
                                                 ${isActive(item.href)
                                                     ? "opacity-100"
-                                                    : "opacity-70 group-hover:opacity-100"
+                                                    : "opacity-90 hover:opacity-100"
                                                 }
                                             `}
                                         >
@@ -133,7 +137,7 @@ export function Navbar() {
                                         <span
                                             className={`
                                                 absolute left-0 -bottom-1
-                                                h-px w-full bg-current
+                                                h-[1.5px] w-full bg-current
                                                 origin-left
                                                 transition-all duration-300
                                                 ${isActive(item.href)
@@ -167,7 +171,7 @@ export function Navbar() {
                             <Link
                                 href="/"
                                 className={`
-                                    text-[20px] sm:text-[15px]
+                                    text-[24px] sm:text-[20px] md:text-[24px]
                                     uppercase
                                     tracking-[0.28em]
                                     font-extrabold

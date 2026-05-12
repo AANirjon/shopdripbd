@@ -53,8 +53,8 @@ export function ShopSidebar() {
                                         type="button"
                                         onClick={() => setActiveFilter(option as any)}
                                         className={`flex w-full items-center justify-between rounded-full border px-4 py-3 text-left text-sm transition duration-300 ${active
-                                                ? "border-[#111111] bg-[#111111] text-white"
-                                                : "border-neutral-200 bg-white text-neutral-700 hover:border-neutral-300 hover:bg-neutral-50"
+                                            ? "border-[#111111] bg-[#111111] text-white"
+                                            : "border-neutral-200 bg-white text-neutral-700 hover:border-neutral-300 hover:bg-neutral-50"
                                             }`}
                                     >
                                         <span>{option}</span>
@@ -75,8 +75,8 @@ export function ShopSidebar() {
                                         type="button"
                                         onClick={() => setSelectedSize(size)}
                                         className={`rounded-full border px-4 py-2 text-[11px] uppercase tracking-[0.35em] transition duration-300 ${active
-                                                ? "bg-[#111111] border-[#111111] text-white"
-                                                : "bg-white border-neutral-200 text-neutral-700 hover:bg-neutral-50"
+                                            ? "bg-[#111111] border-[#111111] text-white"
+                                            : "bg-white border-neutral-200 text-neutral-700 hover:bg-neutral-50"
                                             }`}
                                     >
                                         {size}
@@ -97,8 +97,8 @@ export function ShopSidebar() {
                                         type="button"
                                         onClick={() => setSelectedColor(color)}
                                         className={`flex items-center justify-center rounded-full border px-4 py-3 text-[11px] uppercase tracking-[0.35em] transition duration-300 ${active
-                                                ? "bg-[#111111] border-[#111111] text-white"
-                                                : "bg-white border-neutral-200 text-neutral-700 hover:bg-neutral-50"
+                                            ? "bg-[#111111] border-[#111111] text-white"
+                                            : "bg-white border-neutral-200 text-neutral-700 hover:bg-neutral-50"
                                             }`}
                                     >
                                         {color}
