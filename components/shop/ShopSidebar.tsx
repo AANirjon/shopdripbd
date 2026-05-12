@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useShop } from "@/lib/shop-context";
 
 const categoryOptions = ["All", "New Arrivals", "Bags", "Dresses", "Accessories", "Footwear", "Best Sellers"];
@@ -7,6 +8,8 @@ const sizeOptions = ["All", "XS", "S", "M", "L", "XL", "XXL"];
 const colorOptions = ["All", "Beige", "Black", "White", "Brown", "Grey", "Navy"];
 
 export function ShopSidebar() {
+    const [topOffset, setTopOffset] = useState(0);
+
     const {
         activeFilter,
         setActiveFilter,
@@ -18,9 +21,26 @@ export function ShopSidebar() {
         setPriceRange
     } = useShop();
 
+    useEffect(() => {
+        const updateTopOffset = () => {
+            const header = document.querySelector("header");
+            const headerHeight = header ? header.clientHeight || header.getBoundingClientRect().height : 0;
+            setTopOffset(headerHeight || 72);
+        };
+
+        updateTopOffset();
+        window.addEventListener("resize", updateTopOffset, { passive: true });
+        window.addEventListener("scroll", updateTopOffset, { passive: true });
+
+        return () => {
+            window.removeEventListener("resize", updateTopOffset);
+            window.removeEventListener("scroll", updateTopOffset);
+        };
+    }, []);
+
     return (
-        <aside className="hidden lg:block">
-            <div className="rounded-[28px] border border-neutral-200 bg-white p-6 shadow-soft">
+        <aside className="hidden lg:block lg:self-start sticky" style={{ top: topOffset }}>
+            <div className="rounded-[28px] border border-neutral-200 bg-white p-6 shadow-soft overflow-y-auto" style={{ maxHeight: `calc(100vh - ${topOffset + 24}px)` }}>
                 <div className="space-y-6">
                     <div>
                         <p className="text-[10px] uppercase tracking-[0.55em] text-neutral-500">Categories</p>
