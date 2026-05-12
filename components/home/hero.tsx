@@ -31,14 +31,15 @@ export function HeroSection() {
                     alt="Shopdrip editorial hero background"
                     fill
                     sizes="100vw"
-                    className="object-cover object-center"
+                    className="object-cover"
+                    style={{ objectPosition: "center 42%" }}
                     priority
                 />
             </div>
 
-            <div className="absolute inset-0 bg-slate-950/70" />
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.14),transparent_20%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,0.35),transparent_30%)]" />
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-slate-950/95 to-transparent" />
+            <div className="absolute inset-0 bg-slate-950/40" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_22%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,0.2),transparent_30%)]" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-slate-950/80 to-transparent" />
 
             <SectionContainer className="relative min-h-[92vh] flex items-center py-28 lg:py-36">
                 <MotionSection

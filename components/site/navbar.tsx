@@ -65,9 +65,8 @@ export function Navbar() {
         return pathname.startsWith(href);
     };
 
-    const navbarText = isScrolled
-        ? "text-slate-900"
-        : "text-white";
+    const useDarkNavbar = isScrolled || pathname !== "/";
+    const navbarText = useDarkNavbar ? "text-slate-900" : "text-white";
 
     const iconButton = `
         inline-flex items-center justify-center
@@ -85,8 +84,8 @@ export function Navbar() {
                 className={`
                     fixed inset-x-0 top-0 z-50
                     transition-all duration-500
-                    ${isScrolled
-                        ? "bg-[#f7f3ee]/80 backdrop-blur-xl border-b border-black/5 shadow-[0_4px_30px_rgba(0,0,0,0.03)]"
+                    ${useDarkNavbar
+                        ? "bg-[#f7f3ee]/90 backdrop-blur-xl border-b border-black/5 shadow-[0_4px_30px_rgba(0,0,0,0.03)]"
                         : "bg-transparent backdrop-blur-[6px]"
                     }
                 `}
@@ -153,7 +152,7 @@ export function Navbar() {
                                 className={`
                                     ${iconButton}
                                     lg:hidden
-                                    ${isScrolled
+                                    ${useDarkNavbar
                                         ? "bg-white/70 border-black/10 text-black"
                                         : "bg-white/[0.04] border-white/10 text-white"
                                     }
@@ -188,7 +187,7 @@ export function Navbar() {
                                 className={`
                                     ${iconButton}
                                     hidden lg:inline-flex
-                                    ${isScrolled
+                                    ${useDarkNavbar
                                         ? "bg-white/70 border-black/10 text-black hover:bg-white"
                                         : "bg-white/[0.04] border-white/10 text-white hover:bg-white/[0.08]"
                                     }
@@ -203,7 +202,7 @@ export function Navbar() {
                                 className={`
                                     ${iconButton}
                                     hidden lg:inline-flex
-                                    ${isScrolled
+                                    ${useDarkNavbar
                                         ? "bg-white/70 border-black/10 text-black hover:bg-white"
                                         : "bg-white/[0.04] border-white/10 text-white hover:bg-white/[0.08]"
                                     }
@@ -218,7 +217,7 @@ export function Navbar() {
                                 className={`
                                     ${iconButton}
                                     hidden lg:inline-flex
-                                    ${isScrolled
+                                    ${useDarkNavbar
                                         ? "bg-white/70 border-black/10 text-black hover:bg-white"
                                         : "bg-white/[0.04] border-white/10 text-white hover:bg-white/[0.08]"
                                     }
@@ -233,7 +232,7 @@ export function Navbar() {
                                 className={`
                                     ${iconButton}
                                     relative
-                                    ${isScrolled
+                                    ${useDarkNavbar
                                         ? "bg-white/70 border-black/10 text-black hover:bg-white"
                                         : "bg-white/[0.04] border-white/10 text-white hover:bg-white/[0.08]"
                                     }

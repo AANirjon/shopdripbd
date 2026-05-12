@@ -1,0 +1,72 @@
+.followJourneySection {
+    position: relative;
+    overflow: hidden;
+    background: #f8f5f1;
+    color: #111111;
+}
+
+.atmosphereLayer {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.92), transparent 32%),
+        radial-gradient(circle at 20% 18%, rgba(241, 232, 224, 0.75), transparent 18%);
+    pointer-events: none;
+}
+
+.embla {
+    overflow: hidden;
+}
+
+.emblaContainer {
+    display: flex;
+    gap: 22px;
+    padding-bottom: 16px;
+    scroll-snap-type: x mandatory;
+}
+
+.emblaSlide {
+    position: relative;
+    flex: 0 0 70vw;
+    min-width: 70vw;
+    scroll-snap-align: start;
+}
+
+.marqueeText {
+    display: inline-flex;
+    gap: 2rem;
+    white-space: nowrap;
+    animation: marquee 24s linear infinite;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (min-width: 640px) {
+    .emblaSlide {
+        flex: 0 0 42vw;
+        min-width: 42vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .emblaSlide {
+        flex: 0 0 calc(16.66% - 18px);
+        min-width: calc(16.66% - 18px);
+    }
+}

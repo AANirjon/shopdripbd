@@ -1,25 +1,40 @@
-import Link from "next/link";
+"use client";
+
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
-import { Button } from "@/components/ui/button";
+import { WishlistGrid } from "@/components/wishlist/WishlistGrid";
+import { EmptyWishlist } from "@/components/wishlist/EmptyWishlist";
+import { WishlistProvider, useWishlist } from "@/lib/wishlist-context";
+
+function WishlistContent() {
+    const { items } = useWishlist();
+
+    return (
+        <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
+            {items.length > 0 ? <WishlistGrid /> : <EmptyWishlist />}
+        </section>
+    );
+}
 
 export default function WishlistPage() {
     return (
-        <main>
+        <main className="bg-[#f8f5f1] text-[#111111]">
             <Navbar />
-            <section className="mx-auto max-w-6xl px-6 py-20 lg:px-8">
-                <div className="mb-12">
-                    <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">Wishlist</p>
-                    <h1 className="mt-4 text-5xl font-semibold text-matte-900 dark:text-white">Your curated edit.</h1>
-                </div>
-                <div className="rounded-[2rem] border border-neutral-200 bg-white p-16 text-center shadow-soft dark:border-neutral-800 dark:bg-matte-950">
-                    <p className="text-xl font-semibold text-matte-900 dark:text-white">Your wishlist is empty.</p>
-                    <p className="mt-4 text-neutral-600 dark:text-neutral-300">Save pieces you love and return later for an effortless checkout.</p>
-                    <Button asChild className="mt-10">
-                        <Link href="/shop">Browse pieces</Link>
-                    </Button>
-                </div>
+
+            <section className="mx-auto max-w-7xl px-6 pt-[120px] pb-[60px] lg:px-8 lg:pt-[160px] lg:pb-[80px]">
+                <p className="text-[10px] uppercase tracking-[0.55em] text-neutral-600">Curated Favorites</p>
+                <h1 className="mt-6 max-w-3xl text-[42px] font-serif font-light leading-[0.92] tracking-[-0.03em] text-[#111111] sm:text-[48px] lg:text-[72px]">
+                    Your Wishlist
+                </h1>
+                <p className="mt-6 max-w-2xl text-base leading-8 text-neutral-700">
+                    Save the pieces you love and revisit them anytime.
+                </p>
             </section>
+
+            <WishlistProvider>
+                <WishlistContent />
+            </WishlistProvider>
+
             <Footer />
         </main>
     );

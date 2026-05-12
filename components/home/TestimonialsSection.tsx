@@ -90,9 +90,7 @@ export function TestimonialsSection() {
                 >
                     <p className={styles.smallLabel}>CLIENT EXPERIENCES</p>
                     <h2 className={styles.title}>
-                        Testimonials that feel like
-                        <br />
-                        a fashion editorial.
+                        WHAT OUR CUSTOMERS SAY
                     </h2>
                     <p className={styles.description}>
                         A one-row carousel of quiet luxury impressions, designed to feel cinematic and intimate on every screen.
